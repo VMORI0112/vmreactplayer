@@ -3,9 +3,13 @@ import React from 'react';
 import './play.css';
 
 const PlayControl = () => {
+        let res ={};
+        const loadSoundObjects = () =>
+              fetch("https://assets.breatheco.de/apis/sound/all")
+              .then(res => (res.ok ? res : Promise.reject(res)))
+              .then(res => res.json())
 
-
-
+        console.log(res,res.ok, Promise.reject(res))
 
 	return (
        <>
